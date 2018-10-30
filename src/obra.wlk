@@ -19,8 +19,17 @@ class Obra {
 	}
 
 	method registrarJornada() {
+		
+		if (self.obrerosDisponibles().isEmpty()){
+			self.error("No hay obreros disponibles para trabajar")
+			
+		}
+		
+		
+		
 		self.obrerosDisponibles()
 			.forEach({ obrero => obrero.trabajarEn(self)})
+			
 	}
 
 	method obrerosDisponibles() {

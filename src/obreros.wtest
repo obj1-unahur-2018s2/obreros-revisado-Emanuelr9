@@ -36,4 +36,13 @@ describe "Obreros" {
 		assert.equals(7960, obra.fosforos())
 		assert.equals(470, obra.arandelas())
 	}
+	test "la obra falla si no tiene obreros disponibles"{
+		[albanil2, gasista1, gasista2, plomero]
+		.forEach{obr => obr.estaDeLicencia(true)}
+		
+		assert.throwsException{obra.registrarJornada()}
+		
+		
+		
+	}
 }
